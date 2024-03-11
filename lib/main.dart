@@ -1,43 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:heredia0367/pantalla2_0367.dart';
+import 'package:heredia0367/pantallaInicial_0367.dart';
+import 'package:heredia0367/pantalla1_0367.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiApp0367());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiApp0367 extends StatelessWidget {
+  const MiApp0367({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: true,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => PantallaInicial_0367(),
+        "/Pantalla1_0367": (context) => Pantalla1_0367(),
+        "/Pantalla2_0367": (context) => Pantalla2_0367(),
+      },
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
-}
+  } //fin widgets
+} //fin de app
